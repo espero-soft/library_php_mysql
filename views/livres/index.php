@@ -24,11 +24,17 @@
               <td class="border px-4 py-2"><?= htmlspecialchars($livre['isbn']) ?></td>
               <td class="border px-4 py-2">
                 <?php if (isset($_SESSION['user_id'])): ?>
-                  <a href="/?route=emprunter&id=<?= $livre['id'] ?>" class="text-blue-500 hover:text-blue-700">Emprunter</a>
+                  <a href="/?route=emprunter&id=<?= $livre['id'] ?>" class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
+                    <i class="fas fa-book"></i> Emprunter
+                  </a>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-                  <a href="/?route=edit&id=<?= $livre['id'] ?>" class="text-blue-500 hover:text-blue-700 ml-2">Modifier</a>
-                  <a href="/?route=delete&id=<?= $livre['id'] ?>" class="text-red-500 hover:text-red-700 ml-2">Supprimer</a>
+                  <a href="/?route=edit&id=<?= $livre['id'] ?>" class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-600 ml-2">
+                    <i class="fas fa-edit"></i> Modifier
+                  </a>
+                  <a href="/?route=delete&id=<?= $livre['id'] ?>" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 ml-2">
+                    <i class="fas fa-trash"></i> Supprimer
+                  </a>
                 <?php endif; ?>
               </td>
             </tr>

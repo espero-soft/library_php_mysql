@@ -20,6 +20,12 @@ class User
     return $stmt->execute($data);
   }
 
+  public function updateRole($userId, $role)
+  {
+    $stmt = $this->pdo->prepare("UPDATE users SET role = :role WHERE id = :id");
+    return $stmt->execute(['id' => $userId, 'role' => $role]);
+  }
+
   public function login($username, $password)
   {
     $stmt = $this->pdo->prepare("SELECT * FROM users WHERE username = :username");

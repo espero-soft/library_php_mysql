@@ -3,3 +3,4 @@
 /vendor
 .php-tmp
 node_modules
+/logs

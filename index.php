@@ -35,6 +35,17 @@ switch ($route) {
     $authController->editProfile();
     break;
 
+    // Nouvelle route pour afficher la liste des utilisateurs
+  case 'list_users':
+    $userController->listUsers();
+    break;
+
+    // Nouvelle route pour mettre à jour le rôle d'un utilisateur
+  case 'update_role':
+    $userController->updateRole();
+    break;
+
+
     // Routes des livres
   case 'create':
     $livreController->create();
