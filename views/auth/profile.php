@@ -12,22 +12,22 @@
 
     <div class="mb-4">
       <label class="block text-gray-700 font-bold">Nom d'utilisateur</label>
-      <p class="text-gray-800"><?= htmlspecialchars($user['username']) ?></p>
+      <p class="text-gray-800"><?= htmlspecialchars($user['username'] ?? '') ?></p>
     </div>
 
     <div class="mb-4">
       <label class="block text-gray-700 font-bold">Prénom</label>
-      <p class="text-gray-800"><?= htmlspecialchars($user['givenName']) ?></p>
+      <p class="text-gray-800"><?= htmlspecialchars($user['givenName'] ?? '') ?></p>
     </div>
 
     <div class="mb-4">
       <label class="block text-gray-700 font-bold">Nom de famille</label>
-      <p class="text-gray-800"><?= htmlspecialchars($user['familyName']) ?></p>
+      <p class="text-gray-800"><?= htmlspecialchars($user['familyName'] ?? '') ?></p>
     </div>
 
     <div class="mb-4">
       <label class="block text-gray-700 font-bold">Email</label>
-      <p class="text-gray-800"><?= htmlspecialchars($user['email']) ?></p>
+      <p class="text-gray-800"><?= htmlspecialchars($user['email'] ?? '') ?></p>
     </div>
 
     <div class="mt-6">

@@ -11,7 +11,12 @@ class User
   public function register($data)
   {
     $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-    $stmt = $this->pdo->prepare("INSERT INTO users (username, password, role) VALUES (:username, :password, :role)");
+    $stmt = $this->pdo->prepare("
+      INSERT INTO users 
+      (username, password, givenName, familyName, role) 
+      VALUES 
+      (:username, :password, :givenName, :familyName, :role)
+    ");
     return $stmt->execute($data);
   }
 

@@ -1,6 +1,6 @@
 <?php
 $host = getenv('DB_HOST') ?? 'localhost';
-$dbname = getenv('DB_NAME') ?? 'bibliotheque';
+$dbname = getenv('DB_NAME') ?? 'library';
 $username = getenv('DB_USER') ?? 'root';
 $password = getenv('DB_PASSWORD') ?? '';
 

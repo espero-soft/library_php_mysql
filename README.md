@@ -44,8 +44,8 @@
 
     1. Cloner le dépôt :
        ```bash
-       git clone https://github.com/votre-utilisateur/gestion-bibliotheque.git
-       cd gestion-bibliotheque
+       git clone https://github.com/votre-utilisateur/gestion-library.git
+       cd gestion-library
        ```
 
     2. Configurer l'environnement :
@@ -65,7 +65,7 @@
 
     5. Initialiser la base de données :
        ```bash
-       docker-compose exec db mysql -u root -psecret bibliotheque < initdb/db.sql
+       docker-compose exec db mysql -u root -psecret library < initdb/db.sql
        ```
 
     6. Accéder à l'application :
@@ -96,7 +96,7 @@
     ## 🗂️ Structure du projet
 
     ```
-    gestion-bibliotheque/
+    gestion-library/
     ├── app/
     │   ├── Controllers/
     │   ├── Models/
@@ -121,7 +121,7 @@
 
     ```env
     DB_HOST=db
-    DB_NAME=bibliotheque
+    DB_NAME=library
     DB_USER=root
     DB_PASSWORD=secret
     APP_ENV=development

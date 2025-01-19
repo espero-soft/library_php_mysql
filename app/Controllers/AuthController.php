@@ -46,6 +46,8 @@ class AuthController
       $data = [
         'username' => $_POST['username'],
         'password' => $_POST['password'],
+        'givenName' => $_POST['givenName'],
+        'familyName' => $_POST['familyName'],
         'role' => 'user'
       ];
 
