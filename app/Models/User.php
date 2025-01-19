@@ -13,9 +13,9 @@ class User
     $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
     $stmt = $this->pdo->prepare("
       INSERT INTO users 
-      (username, password, givenName, familyName, role) 
+      (username, password, givenName, familyName, email, role) 
       VALUES 
-      (:username, :password, :givenName, :familyName, :role)
+      (:username, :password, :givenName, :familyName, :email, :role)
     ");
     return $stmt->execute($data);
   }

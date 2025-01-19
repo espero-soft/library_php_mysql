@@ -48,6 +48,7 @@ class AuthController
         'password' => $_POST['password'],
         'givenName' => $_POST['givenName'],
         'familyName' => $_POST['familyName'],
+        'email' => $_POST['email'],
         'role' => 'user'
       ];
 

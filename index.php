@@ -1,18 +1,9 @@
 <?php
 session_start();
 require 'config/database.php';
+require 'config/controllers.php';
 
-// Initialisation des modèles
 
-
-// Initialisation des contrôleurs
-require 'app/Controllers/AuthController.php';
-require 'app/Controllers/LivreController.php';
-require 'app/Controllers/EmpruntController.php';
-
-$authController = new AuthController($userModel);
-$livreController = new LivreController($livreModel);
-$empruntController = new EmpruntController($empruntModel, $livreModel);
 
 // Routing basique
 $route = $_GET['route'] ?? 'home';
