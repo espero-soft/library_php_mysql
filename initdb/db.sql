@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS library;
+CREATE DATABASE IF NOT EXISTS library CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE library;
 
 CREATE TABLE livres (
@@ -7,7 +7,7 @@ CREATE TABLE livres (
   auteur VARCHAR(255) NOT NULL,
   annee INT NOT NULL,
   isbn VARCHAR(20) NOT NULL
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -20,7 +20,7 @@ CREATE TABLE users (
   email VARCHAR(255),
   reset_token VARCHAR(255),
   reset_token_expires DATETIME
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE emprunts (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -30,7 +30,7 @@ CREATE TABLE emprunts (
   date_retour DATE NOT NULL,
   FOREIGN KEY (livre_id) REFERENCES livres(id),
   FOREIGN KEY (user_id) REFERENCES users(id)
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE INDEX idx_emprunts_user ON emprunts(user_id);
 CREATE INDEX idx_emprunts_livre ON emprunts(livre_id);
