@@ -10,7 +10,7 @@ class LivreController
 
   public function index()
   {
-    $livres = $this->livreModel->getAll();
+    $livres = $this->livreModel->getAvailableBooks();
     require 'views/livres/index.php';
   }
 

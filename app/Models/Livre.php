@@ -13,7 +13,14 @@ class Livre
     $query = $this->pdo->query("SELECT * FROM livres");
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
-
+  public function getAvailableBooks()
+  {
+    $query = $this->pdo->query("
+      SELECT * FROM livres 
+      WHERE id NOT IN (SELECT livre_id FROM emprunts)
+    ");
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+  }
   public function create($data)
   {
     $stmt = $this->pdo->prepare("INSERT INTO livres (titre, auteur, annee, isbn) VALUES (:titre, :auteur, :annee, :isbn)");
