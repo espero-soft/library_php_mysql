@@ -3,8 +3,7 @@ session_start();
 require 'config/database.php';
 
 // Initialisation des modèles
-require 'app/Models/Emprunt.php';
-$empruntModel = new Emprunt($pdo);
+
 
 // Initialisation des contrôleurs
 require 'app/Controllers/AuthController.php';

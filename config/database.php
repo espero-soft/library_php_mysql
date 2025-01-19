@@ -13,5 +13,7 @@ try {
 
 require_once 'app/Models/Livre.php';
 require_once 'app/Models/User.php';
+require 'app/Models/Emprunt.php';
 $livreModel = new Livre($pdo);
 $userModel = new User($pdo);
+$empruntModel = new Emprunt($pdo);
