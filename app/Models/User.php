@@ -2,10 +2,12 @@
 class User
 {
   private $pdo;
+  private $emailLogModel;
 
   public function __construct($pdo)
   {
     $this->pdo = $pdo;
+    $this->emailLogModel = new EmailLog($this->pdo);
   }
 
   public function register($data)
@@ -24,6 +26,44 @@ class User
   {
     $stmt = $this->pdo->prepare("UPDATE users SET role = :role WHERE id = :id");
     return $stmt->execute(['id' => $userId, 'role' => $role]);
+  }
+  // findByEmail
+  public function findByEmail($email)
+  {
+    $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt->execute(['email' => $email]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
+  //sendResetPasswordEmail
+  public function sendResetPasswordEmail($email)
+  {
+    $user = $this->findByEmail($email);
+    if ($user) {
+      $token = bin2hex(random_bytes(32));
+      $expires = date('Y-m-d H:i:s', strtotime('+1 hour'));
+      $this->storeResetToken($email, $token, $expires);
+
+      $appUrl = getenv('APP_URL')  ?? 'http://localhost';
+      $data = [
+        'user' => $user,
+        'token' => $token,
+        'resetLink' => "$appUrl/?route=reset_password&token=$token"
+      ];
+
+
+
+      $mail = new Mail(
+        $email,
+        "Réinitialisation de votre mot de passe",
+        'reset_password',
+        $data,
+        $this->emailLogModel
+      );
+
+      return $mail->send();
+    }
+    return false;
   }
 
   public function login($username, $password)

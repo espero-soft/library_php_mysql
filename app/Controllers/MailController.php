@@ -4,9 +4,12 @@ require_once 'app/Models/Mail.php';
 class MailController
 {
     private $pdo;
+    private $emailLogModel;
+
     public function __construct($pdo)
     {
         $this->pdo = $pdo;
+        $this->emailLogModel = new EmailLog($this->pdo);
     }
 
     public function sendEmpruntNotification($userId, $livreId)
@@ -30,7 +33,9 @@ class MailController
                 $user['email'],
                 "Confirmation d'emprunt - " . $livre['titre'],
                 'emprunt_confirmation',
-                $data
+                $data,
+                $this->emailLogModel,
+
             );
 
             return $mail->send();
@@ -54,12 +59,32 @@ class MailController
                 $user['email'],
                 "Bienvenue sur notre site",
                 'register_confirmation',
-                $data
+                $data,
+                $this->emailLogModel
             );
 
             return $mail->send();
         }
 
         return false;
+    }
+
+    // reset password mail
+    public function sendResetPasswordMail($email, $token)
+    {
+        $appUrl = getenv('APP_URL')  ?? 'http://localhost';
+        $data = [
+            'resetLink' => "$appUrl/?route=reset_password&token=$token"
+        ];
+
+        $mail = new Mail(
+            $email,
+            "Réinitialisation de votre mot de passe",
+            'reset_password',
+            $data,
+            $this->emailLogModel
+        );
+
+        return $mail->send();
     }
 }

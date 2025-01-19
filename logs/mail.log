@@ -1,5 +1,4 @@
-2025-01-19 11:08:33 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Le Rouge et le Noir, Result: Failure
-2025-01-19 11:19:27 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Espero, Success: No
+2025-01-19 14:07:40 - To: eakpoli@gmail.com, Subject: Réinitialisation de votre mot de passe, Success: No
 Headers: From: bibliotheque@example.com
 Reply-To: bibliotheque@example.com
 MIME-Version: 1.0
@@ -42,19 +41,22 @@ Message: <!DOCTYPE html>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Confirmation d'emprunt</h1>
+            Reset Password Confirmation
         </div>
 
         <div class="content">
-            <p>Bonjour ESPERO AKPOLI,</p>
-            <p>Vous avez emprunté le livre suivant :</p>
+            <p>Bonjour Espero AKPOLI,</p>
+            <p>Vous avez demandé à réinitialiser votre mot de passe.</p>
+            <p>Merci de cliquer sur le lien ci-dessous pour réinitialiser votre mot de passe :</p>
 
             <div style="margin: 20px 0;">
-                <p><strong>Titre :</strong> Espero</p>
-                <p><strong>Auteur :</strong> Espero</p>
-                <p><strong>Date de retour :</strong> 03/02/2025</p>
+                <a href="/?route=reset_password&token=63ae103f745b87959e6328ea86fc1da8ae4125ba134ebc0cc523361486a086a4">Réinitialiser mon mot de passe</a>
             </div>
 
+            <p>Si vous n'avez pas demandé à réinitialiser votre mot de passe, vous pouvez ignorer cet email.</p>
+            <p>Ce lien expirera dans 1 heure.</p>
+
+            <p>À bientôt !</p>
             <p>Merci de votre confiance.</p>
         </div>
 
@@ -66,7 +68,77 @@ Message: <!DOCTYPE html>
 
 </html>
 
-2025-01-19 11:34:33 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Le Rouge et le Noir, Success: No
+2025-01-19 14:11:55 - To: eakpoli@gmail.com, Subject: Réinitialisation de votre mot de passe, Success: No
+Headers: From: bibliotheque@example.com
+Reply-To: bibliotheque@example.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+
+Message: <!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #3b82f6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .footer {
+            background-color: #f3f4f6;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            Reset Password Confirmation
+        </div>
+
+        <div class="content">
+            <p>Bonjour ESPERO AKPOLI,</p>
+            <p>Vous avez demandé à réinitialiser votre mot de passe.</p>
+            <p>Merci de cliquer sur le lien ci-dessous pour réinitialiser votre mot de passe :</p>
+
+            <div style="margin: 20px 0;">
+                <a href="/?route=reset_password&token=9015cfabdbe350911e7716028528e21a51b3854bf227e68c8e1b3687a7da254a">Réinitialiser mon mot de passe</a>
+            </div>
+
+            <p>Si vous n'avez pas demandé à réinitialiser votre mot de passe, vous pouvez ignorer cet email.</p>
+            <p>Ce lien expirera dans 1 heure.</p>
+
+            <p>À bientôt !</p>
+            <p>Merci de votre confiance.</p>
+        </div>
+
+        <div class="footer">
+            <p>Bibliothèque - © 2025</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+2025-01-19 14:13:34 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Le Rouge et le Noir, Success: No
 Headers: From: bibliotheque@example.com
 Reply-To: bibliotheque@example.com
 MIME-Version: 1.0
@@ -133,7 +205,7 @@ Message: <!DOCTYPE html>
 
 </html>
 
-2025-01-19 11:35:42 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Les Trois Mousquetaires, Success: No
+2025-01-19 14:13:35 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Les Trois Mousquetaires, Success: No
 Headers: From: bibliotheque@example.com
 Reply-To: bibliotheque@example.com
 MIME-Version: 1.0
@@ -200,7 +272,7 @@ Message: <!DOCTYPE html>
 
 </html>
 
-2025-01-19 11:35:43 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Voyage au bout de la nuit, Success: No
+2025-01-19 14:13:35 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Voyage au bout de la nuit, Success: No
 Headers: From: bibliotheque@example.com
 Reply-To: bibliotheque@example.com
 MIME-Version: 1.0
@@ -267,7 +339,7 @@ Message: <!DOCTYPE html>
 
 </html>
 
-2025-01-19 11:35:44 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Le Grand Meaulnes, Success: No
+2025-01-19 14:13:35 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Le Grand Meaulnes, Success: No
 Headers: From: bibliotheque@example.com
 Reply-To: bibliotheque@example.com
 MIME-Version: 1.0
@@ -334,7 +406,7 @@ Message: <!DOCTYPE html>
 
 </html>
 
-2025-01-19 11:35:44 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Les MisÃ©rables, Success: No
+2025-01-19 14:13:35 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Les MisÃ©rables, Success: No
 Headers: From: bibliotheque@example.com
 Reply-To: bibliotheque@example.com
 MIME-Version: 1.0
@@ -387,341 +459,6 @@ Message: <!DOCTYPE html>
             <div style="margin: 20px 0;">
                 <p><strong>Titre :</strong> Les MisÃ©rables</p>
                 <p><strong>Auteur :</strong> Victor Hugo</p>
-                <p><strong>Date de retour :</strong> 03/02/2025</p>
-            </div>
-
-            <p>Merci de votre confiance.</p>
-        </div>
-
-        <div class="footer">
-            <p>Bibliothèque - © 2025</p>
-        </div>
-    </div>
-</body>
-
-</html>
-
-2025-01-19 11:35:45 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Les Fleurs du Mal, Success: No
-Headers: From: bibliotheque@example.com
-Reply-To: bibliotheque@example.com
-MIME-Version: 1.0
-Content-Type: text/html; charset=UTF-8
-
-Message: <!DOCTYPE html>
-<html>
-
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background-color: #3b82f6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .footer {
-            background-color: #f3f4f6;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Confirmation d'emprunt</h1>
-        </div>
-
-        <div class="content">
-            <p>Bonjour ESPERO AKPOLI,</p>
-            <p>Vous avez emprunté le livre suivant :</p>
-
-            <div style="margin: 20px 0;">
-                <p><strong>Titre :</strong> Les Fleurs du Mal</p>
-                <p><strong>Auteur :</strong> Charles Baudelaire</p>
-                <p><strong>Date de retour :</strong> 03/02/2025</p>
-            </div>
-
-            <p>Merci de votre confiance.</p>
-        </div>
-
-        <div class="footer">
-            <p>Bibliothèque - © 2025</p>
-        </div>
-    </div>
-</body>
-
-</html>
-
-2025-01-19 11:35:45 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Les Liaisons dangereuses, Success: No
-Headers: From: bibliotheque@example.com
-Reply-To: bibliotheque@example.com
-MIME-Version: 1.0
-Content-Type: text/html; charset=UTF-8
-
-Message: <!DOCTYPE html>
-<html>
-
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background-color: #3b82f6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .footer {
-            background-color: #f3f4f6;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Confirmation d'emprunt</h1>
-        </div>
-
-        <div class="content">
-            <p>Bonjour ESPERO AKPOLI,</p>
-            <p>Vous avez emprunté le livre suivant :</p>
-
-            <div style="margin: 20px 0;">
-                <p><strong>Titre :</strong> Les Liaisons dangereuses</p>
-                <p><strong>Auteur :</strong> Pierre Choderlos de Laclos</p>
-                <p><strong>Date de retour :</strong> 03/02/2025</p>
-            </div>
-
-            <p>Merci de votre confiance.</p>
-        </div>
-
-        <div class="footer">
-            <p>Bibliothèque - © 2025</p>
-        </div>
-    </div>
-</body>
-
-</html>
-
-2025-01-19 11:35:48 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Espero, Success: No
-Headers: From: bibliotheque@example.com
-Reply-To: bibliotheque@example.com
-MIME-Version: 1.0
-Content-Type: text/html; charset=UTF-8
-
-Message: <!DOCTYPE html>
-<html>
-
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background-color: #3b82f6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .footer {
-            background-color: #f3f4f6;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Confirmation d'emprunt</h1>
-        </div>
-
-        <div class="content">
-            <p>Bonjour ESPERO AKPOLI,</p>
-            <p>Vous avez emprunté le livre suivant :</p>
-
-            <div style="margin: 20px 0;">
-                <p><strong>Titre :</strong> Espero</p>
-                <p><strong>Auteur :</strong> Espero</p>
-                <p><strong>Date de retour :</strong> 03/02/2025</p>
-            </div>
-
-            <p>Merci de votre confiance.</p>
-        </div>
-
-        <div class="footer">
-            <p>Bibliothèque - © 2025</p>
-        </div>
-    </div>
-</body>
-
-</html>
-
-2025-01-19 13:05:41 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Le Rouge et le Noir, Success: No
-Headers: From: bibliotheque@example.com
-Reply-To: bibliotheque@example.com
-MIME-Version: 1.0
-Content-Type: text/html; charset=UTF-8
-
-Message: <!DOCTYPE html>
-<html>
-
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background-color: #3b82f6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .footer {
-            background-color: #f3f4f6;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Confirmation d'emprunt</h1>
-        </div>
-
-        <div class="content">
-            <p>Bonjour ESPERO AKPOLI,</p>
-            <p>Vous avez emprunté le livre suivant :</p>
-
-            <div style="margin: 20px 0;">
-                <p><strong>Titre :</strong> Le Rouge et le Noir</p>
-                <p><strong>Auteur :</strong> Stendhal</p>
-                <p><strong>Date de retour :</strong> 03/02/2025</p>
-            </div>
-
-            <p>Merci de votre confiance.</p>
-        </div>
-
-        <div class="footer">
-            <p>Bibliothèque - © 2025</p>
-        </div>
-    </div>
-</body>
-
-</html>
-
-2025-01-19 13:05:43 - To: eakpoli@gmail.com, Subject: Confirmation d'emprunt - Les Trois Mousquetaires, Success: No
-Headers: From: bibliotheque@example.com
-Reply-To: bibliotheque@example.com
-MIME-Version: 1.0
-Content-Type: text/html; charset=UTF-8
-
-Message: <!DOCTYPE html>
-<html>
-
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background-color: #3b82f6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .footer {
-            background-color: #f3f4f6;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Confirmation d'emprunt</h1>
-        </div>
-
-        <div class="content">
-            <p>Bonjour ESPERO AKPOLI,</p>
-            <p>Vous avez emprunté le livre suivant :</p>
-
-            <div style="margin: 20px 0;">
-                <p><strong>Titre :</strong> Les Trois Mousquetaires</p>
-                <p><strong>Auteur :</strong> Alexandre Dumas</p>
                 <p><strong>Date de retour :</strong> 03/02/2025</p>
             </div>
 

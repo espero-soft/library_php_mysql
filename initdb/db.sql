@@ -6,7 +6,10 @@ CREATE TABLE livres (
   titre VARCHAR(255) NOT NULL,
   auteur VARCHAR(255) NOT NULL,
   annee INT NOT NULL,
-  isbn VARCHAR(20) NOT NULL
+  isbn VARCHAR(20) NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY (isbn)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE users (
@@ -19,7 +22,9 @@ CREATE TABLE users (
   picture VARCHAR(255),
   email VARCHAR(255),
   reset_token VARCHAR(255),
-  reset_token_expires DATETIME
+  reset_token_expires DATETIME,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE emprunts (
@@ -28,7 +33,22 @@ CREATE TABLE emprunts (
   user_id INT NOT NULL,
   date_emprunt DATE NOT NULL,
   date_retour DATE NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (livre_id) REFERENCES livres(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE email_logs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  subject VARCHAR(255) NOT NULL,
+  message TEXT NOT NULL,
+  data TEXT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  status ENUM('sent', 'failed') DEFAULT 'sent',
   FOREIGN KEY (user_id) REFERENCES users(id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

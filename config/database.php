@@ -17,6 +17,10 @@ try {
 require_once 'app/Models/Livre.php';
 require_once 'app/Models/User.php';
 require 'app/Models/Emprunt.php';
+require 'app/Models/EmailLog.php';
+
+
 $livreModel = new Livre($pdo);
 $userModel = new User($pdo);
 $empruntModel = new Emprunt($pdo);
+$emailLogModel = new EmailLog($pdo);
