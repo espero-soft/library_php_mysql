@@ -81,27 +81,7 @@ class AuthController
     require 'views/auth/forgot_password.php';
   }
 
-  public function resetPassword()
-  {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      if ($_POST['password'] !== $_POST['confirm_password']) {
-        $_SESSION['error'] = "Les mots de passe ne correspondent pas";
-        return;
-      }
 
-      $token = $_POST['token'];
-      $password = $_POST['password'];
-
-      if ($this->userModel->resetPassword($token, $password)) {
-        $_SESSION['success'] = "Mot de passe réinitialisé avec succès";
-        header('Location: /?route=login');
-        exit;
-      } else {
-        $_SESSION['error'] = "Token invalide ou expiré";
-      }
-    }
-    require 'views/auth/reset_password.php';
-  }
 
   public function profile()
   {
@@ -152,5 +132,65 @@ class AuthController
       header('Location: /?route=login');
       exit;
     }
+  }
+
+
+
+  public function editProfile()
+  {
+    if (!isset($_SESSION['user_id'])) {
+      header('Location: /?route=login');
+      exit;
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $data = [
+        'givenName' => $_POST['givenName'],
+        'familyName' => $_POST['familyName'],
+        'picture' => $_POST['picture'],
+        'email' => $_POST['email']
+      ];
+
+      if ($this->userModel->updateProfile($_SESSION['user_id'], $data)) {
+        $_SESSION['success'] = "Profil mis à jour avec succès";
+        header('Location: /?route=profile');
+        exit;
+      } else {
+        $_SESSION['error'] = "Erreur lors de la mise à jour du profil";
+      }
+    }
+
+    $user = $this->userModel->getUserById($_SESSION['user_id']);
+    require 'views/auth/edit_profile.php';
+  }
+
+
+
+  public function resetPassword()
+  {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $token = $_POST['token'];
+      $password = $_POST['password'];
+
+      // Vérifier le token
+      $user = $this->userModel->findByResetToken($token);
+      if (!$user) {
+        $_SESSION['error'] = "Token invalide ou expiré";
+        return;
+      }
+
+      // Mettre à jour le mot de passe
+      if ($this->userModel->updatePassword($user['id'], $password)) {
+        // Effacer le token
+        $this->userModel->clearResetToken($user['id']);
+
+        $_SESSION['success'] = "Mot de passe réinitialisé avec succès";
+        header('Location: /?route=login');
+        exit;
+      } else {
+        $_SESSION['error'] = "Erreur lors de la réinitialisation du mot de passe";
+      }
+    }
+    require 'views/auth/reset_password.php';
   }
 }

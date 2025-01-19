@@ -42,7 +42,21 @@ class User
     return $stmt->execute(['id' => $userId, 'password' => $password]);
   }
 
-  // getUserById
+  public function updateProfile($userId, $data)
+  {
+    $stmt = $this->pdo->prepare("
+      UPDATE users SET
+      givenName = :givenName,
+      familyName = :familyName,
+      picture = :picture,
+      email = :email
+      WHERE id = :id
+    ");
+    $data['id'] = $userId;
+    return $stmt->execute($data);
+  }
+
+
   public function getUserById($userId)
   {
     $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = :id");
@@ -73,5 +87,44 @@ class User
   {
     $stmt = $this->pdo->query("SELECT * FROM users");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+
+  public function storeResetToken($email, $token, $expires)
+  {
+    $stmt = $this->pdo->prepare("
+      UPDATE users 
+      SET reset_token = :token, 
+          reset_token_expires = :expires 
+      WHERE email = :email
+    ");
+
+    return $stmt->execute([
+      'email' => $email,
+      'token' => $token,
+      'expires' => $expires
+    ]);
+  }
+
+  public function findByResetToken($token)
+  {
+    $stmt = $this->pdo->prepare("
+      SELECT * FROM users 
+      WHERE reset_token = :token 
+        AND reset_token_expires > NOW()
+    ");
+    $stmt->execute(['token' => $token]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
+  public function clearResetToken($userId)
+  {
+    $stmt = $this->pdo->prepare("
+      UPDATE users 
+      SET reset_token = NULL, 
+          reset_token_expires = NULL 
+      WHERE id = :id
+    ");
+    return $stmt->execute(['id' => $userId]);
   }
 }

@@ -41,6 +41,9 @@ switch ($route) {
   case 'change_password':
     $authController->changePassword();
     break;
+  case 'edit_profile':
+    $authController->editProfile();
+    break;
 
     // Routes des livres
   case 'create':
