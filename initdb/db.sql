@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS bibliotheque;
       id INT AUTO_INCREMENT PRIMARY KEY,
       titre VARCHAR(255) NOT NULL,
       auteur VARCHAR(255) NOT NULL,
-      annee YEAR NOT NULL,
+      annee INT NOT NULL,
       isbn VARCHAR(20) NOT NULL
     );
 
@@ -42,7 +42,7 @@ CREATE DATABASE IF NOT EXISTS bibliotheque;
     ('Les Misérables', 'Victor Hugo', 1862, '9782070368231'),
     ('Les Fleurs du Mal', 'Charles Baudelaire', 1857, '9782070368232'),
     ('Les Liaisons dangereuses', 'Pierre Choderlos de Laclos', 1782, '9782070368233')
-    
+
     ;
 
     INSERT INTO users (username, password, role) VALUES
