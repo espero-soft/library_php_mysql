@@ -24,6 +24,8 @@ class LivreController
     require 'views/livres/create.php';
   }
 
+
+
   public function edit($id)
   {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -31,6 +33,7 @@ class LivreController
       header('Location: /');
       exit;
     }
+    $livre = $this->livreModel->getLivreById($id);
     // Récupérer le livre à éditer
     require 'views/livres/edit.php';
   }

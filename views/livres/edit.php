@@ -1,4 +1,16 @@
-<?php require 'templates/header.php'; ?>
+<?php
+require 'templates/header.php';
+
+// Ensure $livre is defined and contains the necessary data
+if (!isset($livre)) {
+  $livre = [
+    'titre' => '',
+    'auteur' => '',
+    'annee' => '',
+    'isbn' => ''
+  ];
+}
+?>
 
 <div class="container mx-auto p-4">
   <h1 class="text-2xl font-bold mb-4">Modifier le livre</h1>
